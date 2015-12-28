@@ -6,7 +6,7 @@
 				<p>Hier kannst du deine und alle anderen Anfragen, sowie deren Download und Genehmigungsstatus sehen.</p>
 				{{#if currentUser}}
 				<p>
-					Wenn du alle Filme und Serien genehmigen möchtest, klicke hier<button class="btn btn-secondary-outline btn-sm" id="approveAll">Alle bestätigen</button>
+					Alle Filme und Serien sofort genehmigen: <button class="btn btn-secondary-outline btn-sm" id="approveAll">Alle bestätigen</button>
 				</p>
 				{{/if}}
 			</div>
@@ -56,7 +56,7 @@
 			  			<li><strong>Genehmigt:</strong> {{{approval_status}}}</li>
 			  			<li><strong>Verfügbar:</strong> {{{download_status}}}</li>
 			  			{{{requesting_user}}}
-			  			<li><strong>Problem:</strong> {{issues}}</li>
+			  			<li><strong>Probleme bekannt:</strong> {{issues}}</li>
 		  			</ul>
 		  		</div>
 		  		<div class="col-md-2 request-details-buttons">
@@ -71,7 +71,7 @@
 							    Melde Fehler<span class="caret"></span>
 							  </button>
 							  <ul class="dropdown-menu">
-							    <li><a href="#" class="issue-select dropdown-item" data="schlechter Ton">Wrong audio</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="schlechter Ton">schlechter Ton</a></li>
 							    <li><a href="#" class="issue-select dropdown-item" data="falscher Ton">No subtitles</a></li>
 							    <li><a href="#" class="issue-select dropdown-item" data="falscher Inhalt">Wrong content</a></li>
 							    <li><a href="#" class="issue-select dropdown-item" data="abspielen nicht mögl.">Playback issues</a></li>
