@@ -2,11 +2,11 @@
 	<div class="requests">
 		<div class="row">
 			<div class="col-md-offset-2 col-md-8">
-			  <h1>Requests</h1>
-				<p>Below you can see yours and all other requests, as well as their download and approval status.</p>
+			  <h1>Anforderungen</h1>
+				<p>Hier kannst du deine und alle anderen Anfragen, sowie deren Download und Genehmigungsstatus sehen.</p>
 				{{#if currentUser}}
 				<p>
-					If you want to approve all Movies and TV Shows, click here <button class="btn btn-secondary-outline btn-sm" id="approveAll">Approve All</button>
+					Wenn du alle Filme und Serien genehmigen möchtest, klicke hier<button class="btn btn-secondary-outline btn-sm" id="approveAll">Alle bestätigen</button>
 				</p>
 				{{/if}}
 			</div>
@@ -52,29 +52,32 @@
 		  		<div class="col-md-4">
 		  			<ul class="request-details-list">
 			  			<li><strong>{{title}}</strong></li>
-			  			<li><strong>Release date:</strong> {{release_date}}</li>
-			  			<li><strong>Approved:</strong> {{{approval_status}}}</li>
-			  			<li><strong>Available:</strong> {{{download_status}}}</li>
+			  			<li><strong>Veröffentlichungsdatum:</strong> {{release_date}}</li>
+			  			<li><strong>Genehmigt:</strong> {{{approval_status}}}</li>
+			  			<li><strong>Verfügbar:</strong> {{{download_status}}}</li>
 			  			{{{requesting_user}}}
-			  			<li><strong>Issues:</strong> {{issues}}</li>
+			  			<li><strong>Problem:</strong> {{issues}}</li>
 		  			</ul>
 		  		</div>
 		  		<div class="col-md-2 request-details-buttons">
 		  			{{#if currentUser}}
-			  			{{#unless approved}}<p><button class="btn btn-sm btn-success-outline approve-item">Approve</button></p>{{/unless}}
-			  			<p><button class="btn btn-sm btn-danger-outline delete-item">Delete</button></p>
-			  			<p><button class="btn btn-sm btn-info-outline clear-issues">Clear Issues</button></p>
+			  			{{#unless approved}}<p><button class="btn btn-sm btn-success-outline approve-item">genehmigen</button></p>{{/unless}}
+			  			<p><button class="btn btn-sm btn-danger-outline delete-item">entfernen</button></p>
+			  			<p><button class="btn btn-sm btn-info-outline clear-issues">Meldungen entfernen</button></p>
 			  		{{/if}}
 			  		<p>
 			  			<div class="btn-group">
 							  <button type="button" class="btn btn-sm btn-warning-outline dropdown-toggle report-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    Report Issue <span class="caret"></span>
+							    Melde Fehler<span class="caret"></span>
 							  </button>
 							  <ul class="dropdown-menu">
-							    <li><a href="#" class="issue-select dropdown-item" data="Wrong Audio">Wrong audio</a></li>
-							    <li><a href="#" class="issue-select dropdown-item" data="No Subtitles">No subtitles</a></li>
-							    <li><a href="#" class="issue-select dropdown-item" data="Wrong Content">Wrong content</a></li>
-							    <li><a href="#" class="issue-select dropdown-item" data="Playback issues">Playback issues</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="schlechter Ton">Wrong audio</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="falscher Ton">No subtitles</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="falscher Inhalt">Wrong content</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="abspielen nicht mögl.">Playback issues</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="Untertitel fehlen">No subtitles</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="schlechtes Bild">Wrong content</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="Sonstiges">Playback issues</a></li>
 							  </ul>
 							</div>
 			  		</p>
