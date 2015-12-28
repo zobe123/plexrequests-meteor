@@ -5,7 +5,7 @@ Meteor.methods({
 
 
 		if (searchType !== "Music") {
-			var type = (searchType === "Movies") ? "movie" : "tv";
+			var type = (searchType === "Filme") ? "movie" : "tv";
 
 			try {
 				var result = Meteor.call("TMDBSearch", searchterm, type)
