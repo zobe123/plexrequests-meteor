@@ -22,11 +22,11 @@ Meteor.methods({
 		var options = [];
 
 		if (Settings.find({}).fetch()[0].searchOptionsMOVIES) {
-			options.push("Movies");
+			options.push("Filme");
 		}
 
 		if (Settings.find({}).fetch()[0].searchOptionsTV) {
-			options.push("TV Shows");
+			options.push("Serien");
 		}
 
 		return options;
