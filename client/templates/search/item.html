@@ -15,20 +15,19 @@
         </p>
         <div class="item-buttons">
           {{#if isRequested}}
-            <button class="btn btn-success-outline already-requested" disabled><i class="fa fa-check"></i> &nbsp; Requested</button>
+            <button class="btn btn-success-outline already-requested" disabled><i class="fa fa-check"></i> &nbsp; bereits angefordert</button>
           {{else}}
             {{#if isTV}}
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-primary-outline dropdown-toggle tv-request" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-plus"></i> &nbsp; Request
-                </button>
+                  <i class="fa fa-plus"></i> &nbsp; Anforderung</button>
                 <div class="dropdown-menu">
-                  <a class="dropdown-item add-request" href="#" value="false">Request New Episodes</a>
-                  <a class="dropdown-item add-request" href="#" value="true">Request All Episodes</a>
+                  <a class="dropdown-item add-request" href="#" value="false">einzelne Episoden</a>
+                  <a class="dropdown-item add-request" href="#" value="true">Alle Episoden</a>
                 </div>
               </div>
             {{else}}
-              <button class="btn btn-primary-outline add-request"><i class="fa fa-plus"></i> &nbsp; Request</button>
+              <button class="btn btn-primary-outline add-request"><i class="fa fa-plus"></i> &nbsp; Anforderung</button>
             {{/if}}
           {{/if}}
         </div>
