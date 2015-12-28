@@ -7,10 +7,10 @@
 			<a class="navbar-brand" href="/"><i class="fa fa-play-circle logo-icon"></i> Plex Requests {{#if currentUser}}<a href="{{pathFor 'admin'}}" class="admin-link">Admin</a>{{/if}}</a>
       <ul class="nav navbar-nav pull-right">
         {{#if plexAuth}}
-          <li class="{{isActiveRoute regex='search'}} nav-item"><a href="{{pathFor 'search'}}" class="nav-link">Search</a></li>
+          <li class="{{isActiveRoute regex='search'}} nav-item"><a href="{{pathFor 'search'}}" class="nav-link">Suche</a></li>
         {{/if}}
         {{#if auth}}
-          <li class="{{isActiveRoute 'requests'}} nav-item"><a href="{{pathFor 'requests'}}" class="nav-link">Requests</a></li>
+          <li class="{{isActiveRoute 'requests'}} nav-item"><a href="{{pathFor 'requests'}}" class="nav-link">Übersicht</a></li>
           {{#unless plexAuth}}
             <li class="nav-item"><a href="/" class="nav-link">Login</a></li>
           {{/unless}}
@@ -36,7 +36,7 @@
 	          <span aria-hidden="true">&times;</span>
 	          <span class="sr-only">Close</span>
 	        </button>
-	        <h4 class="modal-title">Welcome to Plex Requests</h4>
+	        <h4 class="modal-title">Wilkommen zu Plex Requests</h4>
 	      </div>
 	      <div class="modal-body">
 					<p>
