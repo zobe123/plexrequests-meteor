@@ -99,7 +99,7 @@ Template.requests.helpers({
 		}
   },
   'release_date' : function () {
-  	return moment(this.released).format('Do, MM  YYYY');
+  	return moment(this.released).format('DD.MM.YYYY');
   },
   'approval_status' : function () {
   	var approval = (this.approved) ? '<i class="fa fa-check success-icon"></i>': '<i class="fa fa-times error-icon"></i>';
