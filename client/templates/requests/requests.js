@@ -40,7 +40,7 @@ Template.requests.onCreated(function () {
 		var selectedSort = instance.sort.get();
 		var sort = (selectedSort === "Newest First") ? {createdAt: -1} : {createdAt: 1};
 
-  	if (instance.searchType.get() === "Movies") {
+  	if (instance.searchType.get() === "Filme") {
 			if (selectedFilter !== "All Requests") {
 				switch (selectedFilter) {
 					case "Approved":
