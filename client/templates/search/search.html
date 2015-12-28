@@ -8,7 +8,7 @@
 				<form class="form-inline" id="search-form">
 					<div class="form-group">
 						<div class="input-group">
-							<input type="text" class="form-control" id="search-input" size="35" placeholder="Search" {{searchDisabled}} autofocus="">
+							<input type="text" class="form-control" id="search-input" size="35" placeholder="Suche" {{searchDisabled}} autofocus="">
 							<div class="input-group-addon">
 								{{#if searching}}
 								<i class="fa fa-spinner fa-pulse"></i>
@@ -22,7 +22,7 @@
 					<br>
 					<br>
 					<div class="alert alert-danger" role="alert">
-						Searching has been disabled.
+						Suche ist deaktiviert.
 					</div>
 					{{/if}}
 				</form>
@@ -45,7 +45,7 @@
 
 			{{#if error}}
 			<div class="col-sm-4 col-md-offset-2">
-				<div class="alert alert-warning" role="alert">No results found</div>
+				<div class="alert alert-warning" role="alert">kein Suchergebnis</div>
 			</div>
 			{{/if}}
 		</div>
