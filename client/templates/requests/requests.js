@@ -16,8 +16,8 @@ Template.requests.onCreated(function () {
 		}
 	});
 
-	this.filter = new ReactiveVar("All Requests");
-	this.sort = new ReactiveVar("Newest First");
+	this.filter = new ReactiveVar("Alle Wünsche");
+	this.sort = new ReactiveVar("Neueste zuerst");
 
 	// Loading requests on demand
 	instance.loaded = new ReactiveVar(0);
@@ -38,10 +38,10 @@ Template.requests.onCreated(function () {
 		var selectedFilter = instance.filter.get();
 		var filter = {};
 		var selectedSort = instance.sort.get();
-		var sort = (selectedSort === "Newest First") ? {createdAt: -1} : {createdAt: 1};
+		var sort = (selectedSort === "Neueste zuerst") ? {createdAt: -1} : {createdAt: 1};
 
   	if (instance.searchType.get() === "Filme") {
-			if (selectedFilter !== "All Requests") {
+			if (selectedFilter !== "Alle Wünsche") {
 				switch (selectedFilter) {
 					case "Approved":
 						filter = {approved: true}
@@ -64,7 +64,7 @@ Template.requests.onCreated(function () {
 			}
 			return Movies.find(filter, {sort: sort, skip: 0, limit: instance.loaded.get()});
   	} else {
-			if (selectedFilter !== "All Requests") {
+			if (selectedFilter !== "Alle Wünsche") {
 				switch (selectedFilter) {
 					case "Approved":
 						filter = {approved: true}
