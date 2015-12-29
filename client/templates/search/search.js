@@ -96,7 +96,7 @@ Template.search.events({
     request.episodes = ($(event.target).attr("value") === "true") ? true : false;
 
     if (this.media_type === "movie") {
-      btn.html('<i class="fa fa-spinner fa-spin"></i> &nbsp; Requesting...');
+      btn.html('<i class="fa fa-spinner fa-spin"></i> &nbsp; *simsalabim...');
       Meteor.call("requestMovie", request, function (error, result) {
         if (error || result === false) {
           console.log("Error requesting, please check server log");
