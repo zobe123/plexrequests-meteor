@@ -189,7 +189,7 @@ Template.requests.events({
 				Bert.alert("Error adding an issue, or it already exists. Please try again!", "danger");
 			} else {
 				// Alert success
-				Bert.alert("Added issue successfully!", "success");
+				Bert.alert("Problem erfolgreich gemeldet!", "success");
 			}
 		})
 	},
