@@ -15,7 +15,7 @@ Meteor.startup(function () {
 
 	//set TheMovieDB API
 	TMDBSearch.api = "95a281fbdbc2d2b7db59680dade828a6";
-	TMDBSearch.language = "en";
+	TMDBSearch.language = "de";
 
 	var settings = Settings.find().fetch()[0];
 	//set Couch Potato on start-up
