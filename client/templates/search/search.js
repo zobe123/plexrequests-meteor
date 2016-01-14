@@ -96,20 +96,20 @@ Template.search.events({
     request.episodes = ($(event.target).attr("value") === "true") ? true : false;
 
     if (this.media_type === "movie") {
-      btn.html('<i class="fa fa-spinner fa-spin"></i> &nbsp; Requesting...');
+      btn.html('<i class="fa fa-spinner fa-spin"></i> &nbsp; sende...');
       Meteor.call("requestMovie", request, function (error, result) {
         if (error || result === false) {
           console.log("Error requesting, please check server log");
           btn.html('<i class="fa fa-plus"></i> &nbsp; Request');
           Bert.alert("Couldn't submit request, please try again!", "danger");
         } else if (result === true) {
-          Bert.alert("Successfully requested " + requestTitle + "!", "success");
+          Bert.alert("Erfolgreich angefordert " + requestTitle + "!", "success");
           // btn.hide();
         } else if (result === "limit") {
           Bert.alert("You've exceeded your weekly limit!", "info");
           btn.html('<i class="fa fa-plus"></i> &nbsp; Request');
         } else if (result === 'exists') {
-          Bert.alert("Movie is already on Plex!", "info");
+          Bert.alert("Film bereits auf Plex!", "info");
           // btn.hide();
         }
       })
@@ -121,13 +121,13 @@ Template.search.events({
           tvBtn.html('<i class="fa fa-plus"></i> &nbsp; Request ');
           Bert.alert("Couldn't submit request, please try again!", "danger");
         } else if (result === true) {
-          Bert.alert("Successfully requested " + requestTitle + "!", "success");
+          Bert.alert("Erfolgreich angefordert " + requestTitle + "!", "success");
           // tvBtn.hide();
         } else if (result === "limit") {
           Bert.alert("You've exceeded your weekly limit!", "info");
           tvBtn.html('<i class="fa fa-plus"></i> &nbsp; Request ');
         } else if (result === 'exists') {
-          Bert.alert("TV Show is already on Plex!", "info");
+          Bert.alert("Serie bereits auf Plex!", "info");
           // tvBtn.hide();
         }
       })

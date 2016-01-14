@@ -40,7 +40,7 @@ Template.requests.onCreated(function () {
 		var selectedSort = instance.sort.get();
 		var sort = (selectedSort === "Newest First") ? {createdAt: -1} : {createdAt: 1};
 
-  	if (instance.searchType.get() === "Movies") {
+  	if (instance.searchType.get() === "Filme") {
 			if (selectedFilter !== "All Requests") {
 				switch (selectedFilter) {
 					case "Approved":
@@ -99,7 +99,7 @@ Template.requests.helpers({
 		}
   },
   'release_date' : function () {
-  	return moment(this.released).format('MMMM Do, YYYY');
+  	return moment(this.released).format('DD.MM.YYYY');
   },
   'approval_status' : function () {
   	var approval = (this.approved) ? '<i class="fa fa-check success-icon"></i>': '<i class="fa fa-times error-icon"></i>';
@@ -189,7 +189,7 @@ Template.requests.events({
 				Bert.alert("Error adding an issue, or it already exists. Please try again!", "danger");
 			} else {
 				// Alert success
-				Bert.alert("Added issue successfully!", "success");
+				Bert.alert("Problem erfolgreich gemeldet!", "success");
 			}
 		})
 	},
