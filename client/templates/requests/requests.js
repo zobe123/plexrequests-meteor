@@ -95,7 +95,7 @@ Template.requests.helpers({
 		if ((typeof this.poster_path === 'undefined') | (this.poster_path === "/")) {
 			return "poster-placeholder.png";
 		} else {
-			return "http://image.tmdb.org/t/p/w154" + this.poster_path;
+			return "https://image.tmdb.org/t/p/w154" + this.poster_path;
 		}
   },
   'release_date' : function () {
@@ -148,7 +148,10 @@ Template.requests.helpers({
   },
   'hasMoreRequests': function () {
     return Template.instance().requests().count() >= Template.instance().limit.get();
-  }
+  },
+	'searchType': function (type) {
+		return Template.instance().searchType.get() === type;
+	}
 });
 
 Template.requests.events({
@@ -161,7 +164,7 @@ Template.requests.events({
 		Meteor.call("approveRequest", this, function(error, result) {
 			if (error || !(result)) {
 				//Alert error
-				console.log("Error approving, please check server logs");
+				logger.error("Error approving, please check server logs");
 				Bert.alert("Unable to approve " + title +", please try again!", "danger");
 			} else {
 				// Alert success
@@ -174,7 +177,7 @@ Template.requests.events({
 			Meteor.call("deleteRequest", this, function(error, result) {
 				if (error || !(result)) {
 					//Alert error
-					console.log(error);
+					logger.error(error);
 				} else {
 					// Alert success with undo option
 				}
@@ -197,7 +200,7 @@ Template.requests.events({
 		Meteor.call("clearIssues", this, function (error, result) {
 			if (error || !(result)) {
 				//Alert error
-				console.log(error);
+				logger.error(error);
 				Bert.alert("Error clearing issues, please try again!", "danger");
 			} else {
 				// Alert success

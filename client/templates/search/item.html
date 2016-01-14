@@ -3,7 +3,7 @@
     <div class="item-poster">
       <div class="col-sm-3">
         {{#if posterExists}}
-          <img src="http://image.tmdb.org/t/p/w154{{poster_path}}" class="img-responsive" alt="Poster">
+          <img src="https://image.tmdb.org/t/p/w154{{poster_path}}" class="img-responsive" alt="Poster">
         {{/if}}
       </div>
     </div>
@@ -15,12 +15,13 @@
         </p>
         <div class="item-buttons">
           {{#if isRequested}}
-            <button class="btn btn-success-outline already-requested" disabled><i class="fa fa-check"></i> &nbsp; angefordert!</button>
+            <button class="btn btn-success-outline already-requested" disabled><i class="fa fa-check"></i> &nbsp; {{isRequested}}</button>
           {{else}}
             {{#if isTV}}
               <div class="btn-group" role="group">
                 <button type="button" class="btn btn-primary-outline dropdown-toggle tv-request" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                  <i class="fa fa-plus"></i> &nbsp; Wunsch senden</button>
+                  <i class="fa fa-plus"></i> &nbsp; Wunsch senden
+                </button>
                 <div class="dropdown-menu">
                   <a class="dropdown-item add-request" href="#" value="false">einzelne Episoden</a>
                   <a class="dropdown-item add-request" href="#" value="true">Alle Episoden</a>

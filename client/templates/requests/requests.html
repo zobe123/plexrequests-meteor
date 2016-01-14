@@ -1,12 +1,12 @@
 <template name="requests">
 	<div class="requests">
 		<div class="row">
-			<div class="col-md-offset-2 col-md-8">
-			  <h1>Plex WÃ¼nsche</h1>
-				<p>Hier kannst du deine und alle anderen WÃ¼nsche, sowie deren Download und Genehmigungsstatus sehen.</p>
+			<div class="col-md-offset-1 col-md-10">
+			  <h1>Plex Wünsche</h1>
+				<p>Hier kannst du deine und alle anderen Wünsche, sowie deren Download und Genehmigungsstatus sehen.</p>
 				{{#if currentUser}}
 				<p>
-					Alle Filme und Serien sofort genehmigen: <button class="btn btn-secondary-outline btn-sm" id="approveAll">Alle bestÃ¤tigen</button>
+					Alle Filme und Serien sofort genehmigen:  <button class="btn btn-secondary-outline btn-sm" id="approveAll">Approve All</button>
 				</p>
 				{{/if}}
 			</div>
@@ -14,7 +14,7 @@
 
 	<!-- Selector between Movies/TV/etc  and Sort/Filter Options-->
 		<div class="row selectors">
-			<div class="col-md-offset-2 col-md-6">
+			<div class="col-md-offset-1 col-md-8">
 				<ul class="search-selector">
 			  	{{#each searchOptions}}
 			  		<li><a href="#" class="{{#if activeSearch}}active-search{{/if}}">{{this}}</a></li>
@@ -46,35 +46,40 @@
 	  {{#each requests}}
 	  <div class="request-item">
 		  	<div class="row">
-		  		<div class="col-md-2 col-md-offset-2">
+		  		<div class="col-md-2 col-md-offset-1">
 		  			<img src="{{poster_path}}" class="img-responsive" alt="Poster">
 		  		</div>
-		  		<div class="col-md-4">
+		  		<div class="col-md-5">
 		  			<ul class="request-details-list">
-			  			<li><strong>{{title}}</strong></li>
-			  			<li><strong>VerÃ¶ffentlichungsdatum:</strong> {{release_date}}</li>
+							{{#if searchType 'Movies'}}
+			  				<li><a href="http://www.dereferer.org/?http://www.imdb.com/title/{{imdb}}" target="_blank"><strong>{{title}}</strong></a></li>
+							{{/if}}
+							{{#if searchType 'TV Shows'}}
+								<li><a href="http://www.dereferer.org/?http://thetvdb.com/?tab=series&id={{tvdb}}" target="_blank"><strong>{{title}}</strong></a></li>
+							{{/if}}
+			  			<li><strong>Veröffentlichungsdatum:</strong> {{release_date}}</li>
 			  			<li><strong>Genehmigt:</strong> {{{approval_status}}}</li>
-			  			<li><strong>VerfÃ¼gbar:</strong> {{{download_status}}}</li>
+			  			<li><strong>Verfügbar:</strong> {{{download_status}}}</li>
 			  			{{{requesting_user}}}
 			  			<li><strong>Probleme bekannt:</strong> {{issues}}</li>
 		  			</ul>
 		  		</div>
-		  		<div class="col-md-2 request-details-buttons">
+		  		<div class="col-md-3 request-details-buttons">
 		  			{{#if currentUser}}
 			  			{{#unless approved}}<p><button class="btn btn-sm btn-success-outline approve-item">genehmigen</button></p>{{/unless}}
 			  			<p><button class="btn btn-sm btn-danger-outline delete-item">entfernen</button></p>
-			  			<p><button class="btn btn-sm btn-info-outline clear-issues">lÃ¶sche Probleme</button></p>
+			  			<p><button class="btn btn-sm btn-info-outline clear-issues">lösche Probleme</button></p>
 			  		{{/if}}
 			  		<p>
 			  			<div class="btn-group">
 							  <button type="button" class="btn btn-sm btn-warning-outline dropdown-toggle report-item" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							    Melde Probleme<span class="caret"></span>
+							    Melde Probleme <span class="caret"></span>
 							  </button>
-							  <ul class="dropdown-menu">
+							<ul class="dropdown-menu">
 							    <li><a href="#" class="issue-select dropdown-item" data="schlechter Ton">schlechter Ton</a></li>
 							    <li><a href="#" class="issue-select dropdown-item" data="falscher Ton">falscher Ton</a></li>
 							    <li><a href="#" class="issue-select dropdown-item" data="falscher Inhalt">falscher Inhalt</a></li>
-							    <li><a href="#" class="issue-select dropdown-item" data="abspielen nicht mÃ¶gl.">abspielen nicht mÃ¶gl.</a></li>
+							    <li><a href="#" class="issue-select dropdown-item" data="abspielen nicht mögl.">abspielen nicht mögl.</a></li>
 							    <li><a href="#" class="issue-select dropdown-item" data="Untertitel fehlen">Untertitel fehlen</a></li>
 							    <li><a href="#" class="issue-select dropdown-item" data="schlechtes Bild">schlechtes Bild</a></li>
 							    <li><a href="#" class="issue-select dropdown-item" data="Sonstiges">Sonstiges</a></li>
@@ -85,7 +90,7 @@
 		  	</div>
 	  	</div>
 			<div class="row">
-		    <div class="col-md-8 col-md-offset-2">
+		    <div class="col-md-10 col-md-offset-1">
 		      <div class="item-divider"></div>
 		    </div>
 			</div>
@@ -100,7 +105,7 @@
 		<div class="load-more" style="display:none;"></div>
 
 		<div class="row">
-			<div class="col-md-8 col-md-offset-2">
+			<div class="col-md-10 col-md-offset-1">
 				{{#unless Template.subscriptionsReady}}
 					<h3 class="loading">Loading... <i class="fa fa-spin fa-refresh"></i></h3>
 				{{/unless}}
