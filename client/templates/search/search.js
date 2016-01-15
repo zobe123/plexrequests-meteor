@@ -110,7 +110,7 @@ Template.search.events({
           btn.html('<i class="fa fa-plus"></i> &nbsp; Request');
         } else if (result === 'exists') {
           Bert.alert("Film bereits auf Plex!", "info");
-          // btn.hide();
+          btn.hide();
         }
       })
     } else if (this.media_type === "tv") {
@@ -128,7 +128,7 @@ Template.search.events({
           tvBtn.html('<i class="fa fa-plus"></i> &nbsp; Request ');
         } else if (result === 'exists') {
           Bert.alert("Serie bereits auf Plex!", "info");
-          // tvBtn.hide();
+          tvBtn.hide();
         }
       })
     }
