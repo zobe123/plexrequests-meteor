@@ -14,9 +14,9 @@ Template.item.helpers({
       if (!doc) {
         return false;
       } else if (doc.status.downloaded > 0) {
-        return "Downloaded"
+        return "bereits auf Plex!"
       } else {
-        return "Requested"
+        return "bereits in Wunsch-Liste!"
       }
     }
     else if (this.media_type === "movie") {
@@ -24,9 +24,9 @@ Template.item.helpers({
       if (!doc) {
         return false;
       } else if (doc.downloaded) {
-        return "Downloaded"
+        return "bereits auf Plex!"
       } else {
-        return "Requested"
+        return "bereits in Wunsch-Liste!"
       }
     }
   }
