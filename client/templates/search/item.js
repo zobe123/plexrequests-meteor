@@ -30,4 +30,14 @@ Template.item.helpers({
       }
     }
   }
+  'isDownloaded' : function () {
+    if (doc.status.downloaded > 0){
+      return "bereits auf Plex!"
+    } else if (doc.downloaded) {
+      return "bereits auf Plex!"
+    } else {
+      return "Wunsch senden..."
+    }
+    
+  }
 })
